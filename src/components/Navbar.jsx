@@ -121,7 +121,7 @@ const { syncCartFromServer } = useCart();
       <div className="container mx-auto px-4">
         <div className="flex items-center h-16 gap-4">
           <Link to="/" className="text-2xl font-bold text-primary-foreground hover:text-accent transition-colors">
-            ShopHub
+            HCL ShopHub
           </Link>
 
           <div className="flex-1 max-w-2xl mx-4 hidden md:block">

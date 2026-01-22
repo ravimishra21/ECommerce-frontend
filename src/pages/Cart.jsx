@@ -35,6 +35,7 @@ const Cart = () => {
           });
 
           const data = await res.json();
+          console.log('Cart data from server:', data);
 
           if (res.ok) {
             // Sync cart data with the context
@@ -60,9 +61,8 @@ const Cart = () => {
       navigate('/auth');
       return;
     }
-    toast.success('Order placed successfully!');
-  //  clearCart();
-  //  navigate('/profile');
+    // Redirect to checkout page to collect address/payment
+    navigate('/checkout');
   };
 
 
