@@ -55,7 +55,6 @@ const Auth = () => {
        const name= response.data.username;
        console.log("User details from login response:", response.data);
         const userid= response.data.userid;
-        console.log("User id from login response:", userid);
         localStorage.setItem('authToken', token);  // Save token in localStorage
         localStorage.setItem('username', name);
          localStorage.setItem('userid', userid);
@@ -83,8 +82,6 @@ const Auth = () => {
             });
             if (cartRes.ok) {
               const cartData = await cartRes.json();
-              console.log('Server cart count:', cartData);
-              console.log('M2 userid is : ', userId);
               syncCartFromServer(cartData);
             } else {
               console.warn('Could not fetch cart count from server');
@@ -97,7 +94,6 @@ const Auth = () => {
         setIsAuthenticated(true); // Set the authentication state to true locally
         toast.success('Login successful!');
         navigate('/'); // Navigate to homepage or a protected route after successful login
-        console.log('Login response token :',  localStorage.getItem('authToken'));
       } else {
         toast.error('Failed to login');
       }
